@@ -1,11 +1,7 @@
 #include <iostream>
 #include <SDL2/SDL.h>
-#include "include/image.h"
-
-void logSDLError( std::ostream &os, const std::string &msg )
-{
-    os << msg << " error: " << SDL_GetError() << std::endl;
-}
+#include "include/graphicscontroller.h"
+#include "include/error.h"
 
 SDL_Texture *loadTexture( const std::string &filename, SDL_Renderer *ren )
 {
@@ -52,7 +48,7 @@ int main(int argc, char **argv){
 		return 1;
 	}
 
-	SDL_Window *window = SDL_CreateWindow( "Seteki", 100, 100, 256, 240, SDL_WINDOW_SHOWN );
+	/*SDL_Window *window = SDL_CreateWindow( "Seteki", 100, 100, 256, 240, SDL_WINDOW_SHOWN );
 	if( window == NULL ){
         logSDLError( std::cout, "Could not create window");
         return 1;
@@ -63,15 +59,15 @@ int main(int argc, char **argv){
         return 1;
 
     SDL_Texture *textbg = loadTexture( "res/img/mainbg.bmp", render );
-    SDL_Texture *fro = loadTexture( "res/img/transparenttest.bmp", render );
+    SDL_Texture *fro = loadTexture( "res/img/transparenttest.bmp", render );*/
 
     bool quit = false;
     SDL_Event e;
-    SDL_Rect testclip;
-    testclip.x = 7;
-    testclip.y = 33;
-    testclip.w = 31;
-    testclip.h = 12;
+    //SDL_Rect testclip;
+    //testclip.x = 7;
+    //testclip.y = 33;
+    //testclip.w = 31;
+    //testclip.h = 12;
 
     while( !quit )
     {
@@ -83,14 +79,12 @@ int main(int argc, char **argv){
         }
 
         //Render
-        SDL_RenderClear( render );
-        renderTexture( textbg, render, 0, 0 );
-        renderTexture( fro, render, 200, 150, &testclip );
-        SDL_RenderPresent( render );
+        //renderTexture( textbg, render, 0, 0 );
+        //renderTexture( fro, render, 200, 150, &testclip );
     }
-    SDL_DestroyTexture( textbg );
-    SDL_DestroyRenderer( render );
-    SDL_DestroyWindow( window );
+    //SDL_DestroyTexture( textbg );
+    /*SDL_DestroyRenderer( render );
+    SDL_DestroyWindow( window );*/
 
 	SDL_Quit();
 
