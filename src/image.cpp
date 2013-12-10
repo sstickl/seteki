@@ -1,7 +1,7 @@
 #include "../include/image.h"
 
 /** CTOR */
-image::image( const std::string filename, SDL_Renderer *ren )
+Sprite::Sprite( const std::string filename, SDL_Renderer *ren )
 {
     //load the image
     texture = NULL;    //initialize to nullptr
@@ -28,7 +28,7 @@ image::image( const std::string filename, SDL_Renderer *ren )
 }
 
 /** DTOR */
-image::~image()
+Sprite::~Sprite()
 {
     SDL_DestroyTexture( texture );  //unload the texture
 }

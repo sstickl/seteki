@@ -4,20 +4,21 @@
 #include <iostream>
 #include "error.h"
 
-class image
+class Sprite
 {
     public:
-        image( const std::string, SDL_Renderer *);    //ctor
-        virtual ~image();   //dtor
+        Sprite( const std::string, SDL_Renderer *);    //ctor
+        virtual ~Sprite();   //dtor
 
         void incCounter() { m_Counter++; }
-        void decCounter() { m_Counter--; }
+        void decCounter() { m_Counter--; }  //if m_Counter == 0 on this, destroy
 
+        /** THIS SHOULD BE PRIVATE IN THE FUTURE */
+        SDL_Texture *texture;   //Holds image data
     protected:
 
     private:
         unsigned int m_Counter; //Holds how many objects are referencing this image -- if 0, destruct
-        SDL_Texture *texture;   //Holds image data
 };
 
 #endif // IMAGE_H

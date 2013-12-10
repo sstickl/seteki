@@ -12,10 +12,13 @@ class GraphicsController
         virtual ~GraphicsController();
         /** Rendering */
         void Draw();
+        void renderTexture( SDL_Texture *, SDL_Renderer *, SDL_Rect, SDL_Rect *clip = NULL );
+        void renderTexture( SDL_Texture *, SDL_Renderer *, int, int, SDL_Rect *clip = NULL );
     protected:
     private:
         SDL_Window *window;
         SDL_Renderer *renderer;
+        Sprite *bg;
 };
 
 #endif // GRAPHICSCONTROLLER_H

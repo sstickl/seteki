@@ -22,7 +22,8 @@ SDL_Texture *loadTexture( const std::string &filename, SDL_Renderer *ren )
 
     return texture;
 }
-void renderTexture( SDL_Texture *texture, SDL_Renderer *target, SDL_Rect destination, SDL_Rect *clip = NULL )
+
+/*void renderTexture( SDL_Texture *texture, SDL_Renderer *target, SDL_Rect destination, SDL_Rect *clip = NULL )
 {
     SDL_RenderCopy( target, texture, clip, &destination );
 }
@@ -40,13 +41,15 @@ void renderTexture(SDL_Texture *tex, SDL_Renderer *ren, int x, int y, SDL_Rect *
 		SDL_QueryTexture(tex, NULL, NULL, &dst.w, &dst.h);
 
 	renderTexture(tex, ren, dst, clip);
-}
+}*/
 
 int main(int argc, char **argv){
 	if (SDL_Init(SDL_INIT_EVERYTHING) != 0){
 		logSDLError( std::cout, "Could not intialize SDL");
 		return 1;
 	}
+
+	GraphicsController graphicsController;
 
 	/*SDL_Window *window = SDL_CreateWindow( "Seteki", 100, 100, 256, 240, SDL_WINDOW_SHOWN );
 	if( window == NULL ){
@@ -78,6 +81,7 @@ int main(int argc, char **argv){
                 quit = true;
         }
 
+        graphicsController.Draw();
         //Render
         //renderTexture( textbg, render, 0, 0 );
         //renderTexture( fro, render, 200, 150, &testclip );
