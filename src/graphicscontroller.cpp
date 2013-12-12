@@ -3,7 +3,7 @@
 /** CTOR */
 GraphicsController::GraphicsController()
 {
-    window = SDL_CreateWindow( "Seteki", 100, 100, 256, 240, SDL_WINDOW_SHOWN );
+    window = SDL_CreateWindow( "Tibbers Quest", 100, 100, 256, 240, SDL_WINDOW_SHOWN );
     if( window == NULL )
         logSDLError( std::cout, "Error creating window" );
 
@@ -28,7 +28,9 @@ void GraphicsController::Draw()
     //Reset
     SDL_RenderClear( renderer );
 
-    //Draw Step8
+    //Draw Step
+    /** Use an std::map to store texture objects and draw? */
+    /** Each object in the game has to submit a drawing method -> into an array with what texture they're using and the location */
     renderTexture( bg->texture, renderer, 0, 0, NULL );
 
     //Present Step

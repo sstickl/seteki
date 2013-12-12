@@ -39,9 +39,11 @@
 			<Add option="-lmingw32 -lSDL2main -lSDL2" />
 			<Add directory="i686-w64-mingw32/lib" />
 		</Linker>
+		<Unit filename="include/error.h" />
 		<Unit filename="include/graphicscontroller.h" />
 		<Unit filename="include/image.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/error.cpp" />
 		<Unit filename="src/graphicscontroller.cpp" />
 		<Unit filename="src/image.cpp" />
 		<Extensions>
