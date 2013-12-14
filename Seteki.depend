@@ -1008,7 +1008,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1386984368 source:c:\users\sstickl\documents\github\seteki\main.cpp
+1387037573 source:c:\users\sstickl\documents\github\seteki\main.cpp
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
@@ -1330,7 +1330,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1386984389 c:\users\sstickl\documents\github\seteki\include\graphicscontroller.h
+1387036297 c:\users\sstickl\documents\github\seteki\include\graphicscontroller.h
 	"image.h"
 
 1386983647 c:\users\sstickl\documents\github\seteki\include\image.h
@@ -1339,14 +1339,14 @@
 	<iostream>
 	"error.h"
 
-1386984476 source:c:\users\sstickl\documents\github\seteki\src\graphicscontroller.cpp
+1387037482 source:c:\users\sstickl\documents\github\seteki\src\graphicscontroller.cpp
 	"../include/graphicscontroller.h"
 
 1386622541 c:\users\sstickl\documents\github\seteki\include\error.h
 	<iostream>
 	<SDL2/SDL.h>
 
-1386983846 source:c:\users\sstickl\documents\github\seteki\src\image.cpp
+1386984516 source:c:\users\sstickl\documents\github\seteki\src\image.cpp
 	"../include/image.h"
 
 1386622491 source:c:\users\sstickl\documents\github\seteki\src\error.cpp

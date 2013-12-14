@@ -13,6 +13,9 @@ GraphicsController::GraphicsController()
 
     bg = new Sprite( "res/img/mainbg.bmp", renderer );
     ges = new Sprite( "res/img/ges.png", renderer );
+    cursor = new Sprite( "res/img/cursor.png", renderer );
+    x = 0;
+    y = 0;
 }
 
 /** DTOR */
@@ -34,6 +37,7 @@ void GraphicsController::Draw()
     /** Each object in the game has to submit a drawing method -> into an array with what texture they're using and the location */
     //renderTexture( bg->texture, renderer, 0, 0, NULL );
     renderTexture( ges->texture, renderer, 20, 0, NULL );
+    renderTexture( cursor->texture, renderer, x, y, NULL );
 
     //Present Step
     SDL_RenderPresent( renderer );
