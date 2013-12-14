@@ -36,7 +36,7 @@
 			<Add directory="C:/Users/sstickl/Documents/RPG project/Seteki/" />
 		</ResourceCompiler>
 		<Linker>
-			<Add option="-lmingw32 -lSDL2main -lSDL2" />
+			<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_image" />
 			<Add directory="i686-w64-mingw32/lib" />
 		</Linker>
 		<Unit filename="include/error.h" />

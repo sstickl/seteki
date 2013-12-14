@@ -12,6 +12,7 @@ GraphicsController::GraphicsController()
         logSDLError( std::cout, "Error creating renderer" );
 
     bg = new Sprite( "res/img/mainbg.bmp", renderer );
+    ges = new Sprite( "res/img/ges.png", renderer );
 }
 
 /** DTOR */
@@ -31,7 +32,8 @@ void GraphicsController::Draw()
     //Draw Step
     /** Use an std::map to store texture objects and draw? */
     /** Each object in the game has to submit a drawing method -> into an array with what texture they're using and the location */
-    renderTexture( bg->texture, renderer, 0, 0, NULL );
+    //renderTexture( bg->texture, renderer, 0, 0, NULL );
+    renderTexture( ges->texture, renderer, 20, 0, NULL );
 
     //Present Step
     SDL_RenderPresent( renderer );

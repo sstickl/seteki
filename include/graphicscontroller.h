@@ -19,6 +19,7 @@ class GraphicsController
         SDL_Window *window;
         SDL_Renderer *renderer;
         Sprite *bg;
+        Sprite *ges;
 };
 
 #endif // GRAPHICSCONTROLLER_H

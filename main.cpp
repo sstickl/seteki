@@ -1,9 +1,10 @@
 #include <iostream>
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include "include/graphicscontroller.h"
 #include "include/error.h"
 
-SDL_Texture *loadTexture( const std::string &filename, SDL_Renderer *ren )
+/*SDL_Texture *loadTexture( const std::string &filename, SDL_Renderer *ren )
 {
     SDL_Texture *texture = NULL;    //initialize to nullptr
     SDL_Surface *image = SDL_LoadBMP( filename.c_str() ); //load the image
@@ -21,7 +22,7 @@ SDL_Texture *loadTexture( const std::string &filename, SDL_Renderer *ren )
         logSDLError( std::cout, "Could not load BMP");
 
     return texture;
-}
+}*/
 
 /*void renderTexture( SDL_Texture *texture, SDL_Renderer *target, SDL_Rect destination, SDL_Rect *clip = NULL )
 {
@@ -44,9 +45,15 @@ void renderTexture(SDL_Texture *tex, SDL_Renderer *ren, int x, int y, SDL_Rect *
 }*/
 
 int main(int argc, char **argv){
-	if (SDL_Init(SDL_INIT_EVERYTHING) != 0){
+	if( SDL_Init( SDL_INIT_EVERYTHING ) != 0 ){
 		logSDLError( std::cout, "Could not intialize SDL");
 		return 1;
+	}
+
+	if( !( IMG_Init( IMG_INIT_PNG ) ) ){ //SDL_image for PNG support
+        logSDLError( std::cout, "Could not initialize SDL_image ");
+        logSDLError( std::cout, IMG_GetError() );
+        return 1;
 	}
 
 	GraphicsController graphicsController;
@@ -90,6 +97,7 @@ int main(int argc, char **argv){
     /*SDL_DestroyRenderer( render );
     SDL_DestroyWindow( window );*/
 
+    IMG_Quit(); //Quit SDL_image
 	SDL_Quit();
 
 	return 0;
