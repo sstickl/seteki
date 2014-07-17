@@ -36,6 +36,15 @@ int main(int argc, char **argv){
         {
             if( e.type == SDL_QUIT )
                 quit = true;
+			switch( event.type ) {
+				case SDL_KEYDOWN:
+					switch( event.key.keysym.sym ){
+						case SDLK_RIGHT: graphicsController.x=20; break;
+						case SDLK_LEFT: graphicsController.x=5; break;
+						case SDLK_UP: graphicsController.y=5; break;
+						case SDLK_DOWN: graphicsController.y=20; break;
+					}
+			}
         }
         if( joystick != NULL )
         {
